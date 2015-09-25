@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var label:UILabel = UILabel()
     var button: UIButton = UIButton()
     var color:String = "AE273D" //色例
-    var parameter:Int = 20 //明度変更パラメータ
+    var parameter:Int = 10 //明度変更パラメータ
     override func viewDidLoad() {
         super.viewDidLoad()
         // 表示用ラベル
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
 
     func btnAction(sender: UIButton){
-        color = ColorUtil.BrightnessUtil(color, par: 1)
+        color = ColorUtil.BrightnessUtil(color, par: parameter)
         label.text = ("現在の色\(color)")
         button.layer.backgroundColor = UIColor.hexStr("#\(color)", alpha: 1.0).CGColor
     }

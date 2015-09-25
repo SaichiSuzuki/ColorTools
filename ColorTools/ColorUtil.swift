@@ -25,9 +25,42 @@ class ColorUtil {
             var r = (color & 0xFF0000) >> 16
             var g = (color & 0x00FF00) >> 8
             var b = (color & 0x0000FF)
-            r += UInt32(par)
-            g += UInt32(par)
-            b += UInt32(par)
+            // 正なら255超えないように
+            if(par>0){
+                if(Int(r)+par>255){
+                    r = 255
+                }else{
+                    r += UInt32(par)
+                }
+                if(Int(g)+par>255){
+                    g = 255
+                }else{
+                    g += UInt32(par)
+                }
+                if(Int(b)+par>255){
+                    b = 255
+                }else{
+                    b += UInt32(par)
+                }
+            }
+            // 負なら0超えないように
+            else{
+                if(Int(r)+par<0){
+                    r = 0
+                }else{
+                    r = UInt32(Int(r) + par)
+                }
+                if(Int(g)+par<0){
+                    g = 0
+                }else{
+                    g = UInt32(Int(g) + par)
+                }
+                if(Int(b)+par<0){
+                    b = 0
+                }else{
+                    b = UInt32(Int(b) + par)
+                }
+            }
             result = NSString(format: "%02x%02x%02x", r, g, b)
         }
         return result as String
