@@ -419,6 +419,7 @@
 				150DAB841BB515070065F41B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		150DAB851BB515070065F41B /* Build configuration list for PBXNativeTarget "ColorToolsTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +428,7 @@
 				150DAB871BB515070065F41B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

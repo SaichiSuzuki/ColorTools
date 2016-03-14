@@ -18,6 +18,10 @@ class ColorUtil {
         var result:NSString = "nil"
         // 16進数から10進数
         let code = color
+        // remove head #
+        if color.substringToIndex(color.startIndex.successor()) == "#" {
+            code = (color as NSString).substringFromIndex(1)
+        }
         let scanner = NSScanner(string: code as NSString as String)
         var color:UInt32 = 0
         if(scanner.scanHexInt(&color)) {
